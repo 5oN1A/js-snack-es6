@@ -39,19 +39,33 @@ function randomNumberGenerator(numMin, numMax) {
 //3.accedere ai falli subiti di ogni squadra e pushare un numero random
 
 function pushRandomValues(teams) {
+    let featuresToPrint = {};
 
     for (let index = 0; index < teams.length; index++) {
         const team = teams[index];
+
+    
         //2
-        team["puntiFatti"] = randomNumberGenerator(1, 6);
+       team["puntiFatti"] = randomNumberGenerator(1, 6);
         //3
         team["falliSubiti"] = randomNumberGenerator(1, 6);
 
-       // console.log(team["puntiFatti"]);
-       // console.log(team["falliSubiti"])
+        const { nome, falliSubiti } = teams[index];
+        
+
+        console.log(nome);
+        console.log(falliSubiti);
+
+       // featuresToPrint[nome].push(
+          //   {"nome" : nome,
+         //   "falliSubiti" : falliSubiti});
 
     }
+
+    
     return(teams);
+
+   
 }
 
 
@@ -62,5 +76,5 @@ console.log(teams)
 
 //3. creazione di un nuovo array i cui elementi contengono solo nomi e falli subiti
 
-let featuresToPrint = [];
+
 
